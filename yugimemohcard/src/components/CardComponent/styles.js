@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
-    background-color: #C882B4;
+export const Container = styled.div`
+    -webkit-box-shadow:inset 0px 0px 0px 3px gray;
+    -moz-box-shadow:inset 0px 0px 0px 3px gray;
+    box-shadow:inset 0px 0px 0px 3px gray;
     height: 12rem;
     width: 10rem;
-    border: none;
+    border-radius: 1rem;
+`;
+
+export const Card = styled.div`
+    height: 12rem;
+    width: 9.25rem;
     border-radius: 1rem;
     border: 3px solid gray;
 `;

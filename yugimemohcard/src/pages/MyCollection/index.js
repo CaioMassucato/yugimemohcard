@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from '../../components/Card';
+import CardComponent from '../../components/CardComponent';
 
 import * as Styled from './styles';
 
 const MyCollection = () => {
 return (
     <div>
-        <Card>Oi</Card>
+        <CardComponent src="https://images.emojiterra.com/google/android-10/512px/1f3c0.png" color="red"></CardComponent>
     </div>
 );
 }
