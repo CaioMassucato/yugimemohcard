@@ -1,0 +1,10 @@
+body {
+
+    background-color: #846DB4;
+    height: 10vh;
+    width: 10px;
+    align-items: center;
+    justify-content: right;
+    border: #846DB4 1px 2px;
+    margin-bottom: 0;
+}
