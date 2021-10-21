@@ -6,15 +6,19 @@ import {
     Image
 } from './styles';
 
-const CardComponent= ({src, color}) => {
+const CardComponent= ({src, color, title, creator}) => {
     return (
-        <Container style = {{ backgroundColor: color }}>
-            <Card style = {{ backgroundColor: color }}>
-                <ImageDiv>
-                    <Image src={src}></Image>
-                </ImageDiv>
-            </Card>
-        </Container>
+        <div style={{padding: '1rem'}}>
+            <Container style = {{ backgroundColor: color }}>
+                <Card style = {{ backgroundColor: color }}>
+                    <ImageDiv>
+                        <Image src={src}></Image>
+                    </ImageDiv>
+                </Card>
+            </Container>
+            <h1>{title}</h1>
+            <span>{creator}</span>
+        </div>
     );
 }
 
