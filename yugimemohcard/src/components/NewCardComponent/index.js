@@ -14,7 +14,7 @@ const NewCardComponent= ({src, color, title}) => {
                     <Image src={PlusImg}></Image>
                 </ImageDiv>
             </Card>
-            <h1 style = {{ maxWidth: "1rem", maxHeight: "4rem" }}>{title}</h1>
+            <p style = {{ fontSize: "1.5rem", padding: "0.5rem", maxWidth: "12rem", display: 'flex', justifyContent: 'center' }}>{title}</p>
         </div>
     );
 }

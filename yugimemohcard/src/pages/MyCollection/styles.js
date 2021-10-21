@@ -53,6 +53,9 @@ export const Options = styled.div`
 
 export const Select = styled.div`
   display: flex;
+  width: 30%;
+  flex-direction: row;
+  justify-content: space-between;
 `
 
 export const CardDiv = styled.div`
