@@ -1,13 +1,22 @@
 import {BrowserRouter, Route} from 'react-router-dom'
-import EditarColecao from './components/EditarColecao/index'
+import { useState, useEffect } from "react"
+import NovaColecao from './components/NovaColecao/index'
+import EditarColecao from './components/EditarColecao';
 
 
 function App() {
+  const [nomeColecao, setColecao] = useState(''); /* nome da coleçao */
+
+
+
   return (
     <BrowserRouter>
-    <EditarColecao></EditarColecao>
+    
+  <Route path="/new-collection" exact>
+    <NovaColecao nomeColecao={nomeColecao}></NovaColecao>
+  </Route>
   <Route path="/edit-collection" exact>
-    <EditarColecao ></EditarColecao>
+    <EditarColecao></EditarColecao>
   </Route>
   </BrowserRouter>
   );

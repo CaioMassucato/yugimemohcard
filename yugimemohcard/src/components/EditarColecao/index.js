@@ -3,6 +3,8 @@ import perfil from '../../images/perfil.png'
 import setabaixo from '../../images/seta-para-baixo.png'
 import setaesquerda from '../../images/seta-para-esquerda.png'
 import styled from 'styled-components'
+import React, { Component } from 'react'
+import Select from 'react-select'
 
 const Header = styled.div `
 background-color: #846DB4;
@@ -16,6 +18,7 @@ const HeaderLinks = styled.p `
 color: white;
 font-size: 21px;
 margin-left: 40px;
+cursor: pointer;
 display: flex;
 `
 
@@ -76,10 +79,12 @@ border: 3px solid white;
 `
 
 const Voltar = styled.p `
+width: 79px;
 color: #382268;
 font-size: 22px;
 margin-left: 60px;
 margin-bottom: 0px;
+cursor: pointer;
 `
 
 const NovaColecao = styled.p `
@@ -106,26 +111,66 @@ margin-bottom: 0px;
 const DivForm = styled.div `
 margin-top: 40px;
 margin-left: 75px;
-
+display: flex;
+flex-direction: column;
 `
 
 const PForm = styled.p `
 color: #846DB4;
 font-size: 25px;
 margin-bottom: 10px; 
+
 `
 
 const InputForm = styled.input `
 width: 50vw;
 border: 1px solid #846DB4;
-padding: 10px;
+padding: 8px;
 border-radius: 20px;
 outline: none;
 font-size: 15px;
 `
 
-function EditarColecao() 
-{
+const OptionsForm = styled.select `
+width: 51vw;
+border: 1px solid #846DB4;
+padding: 8px;
+border-radius: 20px;
+outline: none;
+cursor: pointer;
+font-size: 15px;
+`
+
+const TextForm = styled.textarea `
+width: 50vw;
+height: 90px;
+border: 1px solid #846DB4;
+padding: 8px;
+border-radius: 20px;
+outline: none;
+font-size: 15px;
+`
+
+const BotaoSalvar = styled.button `
+background-color: #846DB4;
+color: white;
+border: 1px solid #846DB4;
+width: 150px;
+height: 40px;
+font-size: 20px;
+margin-top: 25px;
+border-radius: 20px;
+margin-bottom: 50px;
+margin-left: 40vw;
+cursor: pointer;
+`
+
+
+function EditarColecao () {
+
+    
+
+
 
     return <div>
         <Header>
@@ -150,13 +195,36 @@ function EditarColecao()
             <ImgSetaEsquerda src={setaesquerda} alt="seta para esquerda" ></ImgSetaEsquerda>
             Voltar 
         </Voltar>
-        <NovaColecao> Nova Coleção  </NovaColecao>
+        <NovaColecao> Editar Coleção  </NovaColecao>
         <DivLinha></DivLinha>
-        <DivForm>
-            <PForm> Nome da Coleção</PForm>
-            <InputForm></InputForm>
-            <PForm> Categoria</PForm>
-        </DivForm>
+        <div>        
+            <DivForm>
+                <PForm> Nome da Coleção</PForm>
+                <InputForm></InputForm>
+                <PForm> Categoria</PForm>
+                    <OptionsForm class="form-control" id="categorias">
+                        <option>Artes Visuais</option>
+                        <option>Atualidades</option>
+                        <option>Espanhol</option>
+                        <option>Filosofia</option>
+                        <option>Física</option>
+                        <option>Geografia</option>
+                        <option>Gramática</option>
+                        <option>História</option>
+                        <option>Inglês</option>
+                        <option>Matemática</option>
+                        <option>Música</option>
+                        <option>Outro</option>
+                        <option>Química</option>
+                    </OptionsForm>
+                <PForm>Descrição (opcional)</PForm>
+                <TextForm></TextForm>
+            </DivForm>
+            <div>
+
+            </div>
+        </div>  
+            <BotaoSalvar>Salvar</BotaoSalvar>
 
 
     </div>
