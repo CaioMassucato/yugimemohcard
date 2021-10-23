@@ -7,13 +7,16 @@ import EditarColecao from './components/EditarColecao';
 function App() {
   const [nomeColecao, setColecao] = useState(''); /* nome da coleçao */
 
-
+  const criarColecao = name => {
+    setColecao(name)
+    console.log(nomeColecao)
+  }
 
   return (
     <BrowserRouter>
     
   <Route path="/new-collection" exact>
-    <NovaColecao nomeColecao={nomeColecao}></NovaColecao>
+    <NovaColecao criarColecao={criarColecao}></NovaColecao>
   </Route>
   <Route path="/edit-collection" exact>
     <EditarColecao></EditarColecao>

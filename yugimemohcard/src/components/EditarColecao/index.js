@@ -4,7 +4,7 @@ import setabaixo from '../../images/seta-para-baixo.png'
 import setaesquerda from '../../images/seta-para-esquerda.png'
 import styled from 'styled-components'
 import React, { Component } from 'react'
-import Select from 'react-select'
+
 
 const Header = styled.div `
 background-color: #846DB4;
@@ -87,7 +87,7 @@ margin-bottom: 0px;
 cursor: pointer;
 `
 
-const NovaColecao = styled.p `
+const Title = styled.p `
 font-size: 35px;
 margin-left: 60px;
 margin-bottom: 10px;
@@ -139,11 +139,13 @@ border-radius: 20px;
 outline: none;
 cursor: pointer;
 font-size: 15px;
+background-color: white;
 `
 
 const TextForm = styled.textarea `
+background-color: white;
 width: 50vw;
-height: 90px;
+height: 140px;
 border: 1px solid #846DB4;
 padding: 8px;
 border-radius: 20px;
@@ -165,11 +167,58 @@ margin-left: 40vw;
 cursor: pointer;
 `
 
+const DivFormTemplate = styled.div `
+display: flex;
+flex-direction: row;
+`
 
-function EditarColecao () {
+const Previa = styled.p `
+font-size: 20px;
+`
 
-    
+const DivTemplate = styled.div `
+margin-top: 30px;
+margin-left: 240px;
+`
 
+const Cartoes = styled.div `
+background-color: antiquewhite;
+margin-left: -100px;
+width: 250px;
+height: 300px;
+border-radius: 20px;
+border: 2px solid #846DB4;
+box-shadow: 20px 0px antiquewhite, 22px 2px  #846DB4, 22px -1px #846DB4;
+`
+
+const Label = styled.div `
+font-size: 20px;
+color: #382268;
+`
+
+const Emoji = styled.select `
+font-size: 20px;
+background-color: white;
+`
+
+const DivEmojis = styled.div `
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+margin-left: -80px;
+margin-top: 20px;
+`
+
+
+function EditarColecao({criarColecao}) 
+{
+
+    const [nomeColecao, setNomeColecao] = useState('');
+
+    const handleSubmit = event =>{
+        event.preventDefault();
+        criarColecao(nomeColecao)
+    }
 
 
     return <div>
@@ -195,12 +244,13 @@ function EditarColecao () {
             <ImgSetaEsquerda src={setaesquerda} alt="seta para esquerda" ></ImgSetaEsquerda>
             Voltar 
         </Voltar>
-        <NovaColecao> Editar Coleção  </NovaColecao>
+        <Title> Editar Coleção  </Title>
         <DivLinha></DivLinha>
-        <div>        
+        <form onSubmit={handleSubmit}>
+        <DivFormTemplate>        
             <DivForm>
                 <PForm> Nome da Coleção</PForm>
-                <InputForm></InputForm>
+                <InputForm value={nomeColecao} onChange={event => setNomeColecao(event.target.value)}></InputForm>
                 <PForm> Categoria</PForm>
                     <OptionsForm class="form-control" id="categorias">
                         <option>Artes Visuais</option>
@@ -220,11 +270,33 @@ function EditarColecao () {
                 <PForm>Descrição (opcional)</PForm>
                 <TextForm></TextForm>
             </DivForm>
-            <div>
+            <DivTemplate>
+                <Previa>Prévia</Previa>
+                <Cartoes></Cartoes>
+                <DivEmojis>
+                    <Label>Emoji da Capa: </Label>
+                    <Emoji class="form-control" id="emojis">
+                        <option>🎨</option>
+                        <option>📰</option>
+                        <option>🦠</option>
+                        <option>📝</option>
+                        <option>🧲</option>
+                        <option>🌍</option>
+                        <option>📚</option>
+                        <option>📜</option>
+                        <option>🚀</option>
+                        <option>🔢</option>
+                        <option>🎻</option>
+                        <option>🖊</option>
+                        <option>⚗️</option>
+                        <option>😁</option>
+                    </Emoji>
+                </DivEmojis>
 
-            </div>
-        </div>  
+            </DivTemplate>
+        </DivFormTemplate>  
             <BotaoSalvar>Salvar</BotaoSalvar>
+        </form>
 
 
     </div>
