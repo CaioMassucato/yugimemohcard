@@ -2,7 +2,9 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import { useState, useEffect } from "react"
 import NewCollection from './pages/NewCollection/index'
 import EditCollection from './pages/EditCollection'
+import NewCard from './pages/NewCard'
 import MyCollection from './pages/MyCollection/index'
+import EditCard from './pages/EditCard'
 
 
 function App() {
@@ -26,6 +28,12 @@ function App() {
   </Route>
   <Route path="/my-collection" exact>
     <MyCollection></MyCollection>
+  </Route>
+  <Route path="/new-card" exact>
+    <NewCard></NewCard>
+  </Route>
+  <Route path="/edit-card" exact>
+    <EditCard></EditCard>
   </Route>
   </BrowserRouter>
   );

@@ -3,6 +3,7 @@ import perfil from '../../images/perfil.png'
 import setabaixo from '../../images/seta-para-baixo.png'
 import styled from 'styled-components'
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 
 const Header = styled.div `
@@ -20,6 +21,7 @@ margin-left: 40px;
 cursor: pointer;
 margin-top: 20px;
 display: flex;
+text-decoration: none;
 `
 
 const DivLinks = styled.div `
@@ -78,6 +80,17 @@ width: 50px;
 border: 3px solid white;
 `
 
+const linkStyle = {
+    color: 'white',
+    fontSize: "18px",
+    marginLeft: "40px",
+    cursor: "pointer",
+    marginTop: "20px",
+    height: "20px",
+    width: "136px",
+    display: "flex",
+    textDecoration: "none"
+    } ;
 
 
 function Headers() 
@@ -96,7 +109,8 @@ function Headers()
                 <LogoHeader>Card</LogoHeader>
             </DivLogoHeader>
             <DivLinks>
-                <HeaderLinks>Minhas Coleções</HeaderLinks>
+                <Link to="/my-collection" style={linkStyle}>Minhas Coleções</Link>
+                
                 <HeaderLinks>Explorar</HeaderLinks>
             </DivLinks>
             <DivPerfil>

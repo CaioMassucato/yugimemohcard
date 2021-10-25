@@ -58,6 +58,7 @@ border: 1px solid #846DB4;
 padding: 8px;
 border-radius: 20px;
 outline: none;
+margin-bottom: 20px; 
 font-size: 15px;
 `
 
@@ -70,6 +71,7 @@ outline: none;
 cursor: pointer;
 font-size: 15px;
 background-color: white;
+margin-bottom: 20px; 
 `
 
 const TextForm = styled.textarea `

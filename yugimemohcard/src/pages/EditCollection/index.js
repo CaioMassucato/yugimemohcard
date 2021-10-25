@@ -56,6 +56,7 @@ padding: 8px;
 border-radius: 20px;
 outline: none;
 font-size: 15px;
+margin-bottom: 20px; 
 `
 
 const OptionsForm = styled.select `
@@ -67,6 +68,7 @@ outline: none;
 cursor: pointer;
 font-size: 15px;
 background-color: white;
+margin-bottom: 20px; 
 `
 
 const TextForm = styled.textarea `
