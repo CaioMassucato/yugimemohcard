@@ -1,7 +1,7 @@
 import {BrowserRouter, Route} from 'react-router-dom'
 import { useState, useEffect } from "react"
-import NovaColecao from './components/NovaColecao/index'
-import EditarColecao from './components/EditarColecao'
+import NewCollection from './pages/NewCollection/index'
+import EditCollection from './pages/EditCollection'
 import MyCollection from './pages/MyCollection/index'
 
 
@@ -15,11 +15,14 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Route path="/" exact>
+      <MyCollection></MyCollection>
+    </Route>
   <Route path="/new-collection" exact>
-    <NovaColecao criarColecao={criarColecao}></NovaColecao>
+    <NewCollection criarColecao={criarColecao}></NewCollection>
   </Route>
   <Route path="/edit-collection" exact>
-    <EditarColecao></EditarColecao>
+    <EditCollection></EditCollection>
   </Route>
   <Route path="/my-collection" exact>
     <MyCollection></MyCollection>

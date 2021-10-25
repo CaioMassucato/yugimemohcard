@@ -1,6 +1,7 @@
 import React from 'react';
 import CardComponent from '../../components/CardComponent';
 import NewCardComponent from '../../components/NewCardComponent';
+import Headers from '../../components/Header/index';
 import SearchBarImg from '../../images/pesquisa.png';
 
 import {
@@ -19,7 +20,9 @@ import {
 
 const MyCollection = () => {
 return (
+
     <Container>
+        <Headers></Headers>
         <Header>
             <Title>Minhas Coleções</Title>
             <SearchBar src={SearchBarImg}></SearchBar>
